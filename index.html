@@ -3,149 +3,392 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nishant Gautam - Web Developer</title>
+    <title>Nishant Gautam - Resume</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* Modern Resume Styling */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
             color: #333;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em 0;
-        }
-
-        h1 {
-            font-size: 2em;
-            margin-bottom: 5px;
-        }
-
-        p {
-            font-size: 1.2em;
-        }
-
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        h2, h3 {
-            color: #333;
-            text-align: center;
-        }
-
-        p {
             line-height: 1.6;
-            color: #666;
+            padding: 20px;
         }
-
-        .contact-links {
+        
+        .resume {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #1a2a6c, #2a5298);
+            color: white;
+            padding: 40px;
             text-align: center;
-            margin-top: 20px;
         }
-
-        .contact-links a {
-            text-decoration: none;
-            color: #333;
-            margin: 0 10px;
-        }
-
-        .contact-links a:hover {
-            color: #007bff;
-        }
-
-        .skills, .projects {
-            margin-top: 20px;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
+        
+        .name {
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
             margin-bottom: 5px;
         }
-
-        .project-item {
-            margin-left: 20px;
+        
+        .title {
+            font-size: 22px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            opacity: 0.9;
         }
-
-        .project-item::before {
-            content: '•';
-            margin-right: 10px;
-            color: #6c757d;
+        
+        /* Section Styles */
+        .section {
+            padding: 30px 40px;
+            border-bottom: 1px solid #eaeaea;
         }
-
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
         .section-title {
-            background-color: #333;
-            color: #fff;
-            padding: 8px;
-            border-radius: 4px;
-            margin-top: 20px;
+            color: #1a2a6c;
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2a5298;
+        }
+        
+        /* Profile Section */
+        .profile-text {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        /* Experience & Projects */
+        .experience-item, .project-item {
+            margin-bottom: 25px;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .item-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2a5298;
+        }
+        
+        .item-subtitle {
+            font-size: 16px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .item-date {
+            font-size: 16px;
+            font-weight: 500;
+            color: #1a2a6c;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .skill-category {
+            margin-bottom: 15px;
+        }
+        
+        .skill-category h4 {
+            color: #1a2a6c;
+            margin-bottom: 8px;
+            font-size: 17px;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill {
+            background: #eef2f7;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Contact & Education */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        
+        .education-item {
+            margin-bottom: 20px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+            
+            .item-header {
+                flex-direction: column;
+            }
+            
+            .item-date {
+                margin-top: 5px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .name {
+                font-size: 28px;
+            }
+            
+            .title {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <h1>Nishant Gautam</h1>
-        <p>Web Developer</p>
-    </header>
-
-    <section>
-        <h2 class="section-title">About Me</h2>
-        <p>Hello! I'm a passionate web developer with expertise in HTML, CSS, JavaScript, Python, MySQL, and PHP.</p>
-
-        <h2 class="section-title">Education</h2>
-        <ul>
-            <li>Master of Computer Applications (MCA) | Vivekananda Institute of Professional Studies | 2021-2023 | 85.6%</li>
-            <li>Bachelor of Computer Applications (BCA) | Chanderprabhu Jain College | 2018-2021 | 77.2%</li>
-        </ul>
-
-        <h2 class="section-title">Internship</h2>
-        <p>Work from Home Internship, Personifwy | August - September</p>
-        <p>Industrial Program on Artificial Intelligence</p>
-        <ul class="projects">
-            <li class="project-item">Text Classification using TensorFlow</li>
-            <li class="project-item">Classification of Pet's Faces</li>
-        </ul>
-
-        <h2 class="section-title">Skills</h2>
-        <ul class="skills">
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>MySQL</li>
-            <li>PHP</li>
-        </ul>
-
-        <div class="contact-links">
-            <a href="https://www.linkedin.com/in/nishant-gautam-a2429a1b2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
-            <a href="https://github.com/nishantgautam916" target="_blank">GitHub</a>
-            <a href="https://nishantgautam916.github.io" target="_blank">A GitHub project mainly focused on frontend</a>
+    <div class="resume">
+        <!-- Header Section -->
+        <div class="header">
+            <h1 class="name">NISHANT GAUTAM</h1>
+            <h2 class="title">Web Developer & Automation Specialist</h2>
         </div>
-    </section>
-
+        
+        <!-- Profile Section -->
+        <div class="section">
+            <h3 class="section-title">PROFILE</h3>
+            <p class="profile-text">
+                Results-driven web developer and automation specialist with expertise in building dynamic websites and creating efficient business solutions. Bachelor's in Computer Applications (BCA) from Chanderprabhu Jain College and Master's in Computer Applications (MCA) from Vivekananda Institute of Professional Studies. Proven ability to lead teams, solve complex problems, and deliver full-stack applications. Passionate about leveraging Power Platform tools for process automation and data analysis.
+            </p>
+        </div>
+        
+        <!-- Experience Section -->
+        <div class="section">
+            <h3 class="section-title">EXPERIENCE</h3>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">SmartWorks</div>
+                        <div class="item-subtitle">Automation & Development Intern</div>
+                    </div>
+                    <div class="item-date">6 months</div>
+                </div>
+                <ul>
+                    <li>Developed WhatsApp automation system using Power Automate to send real-time inventory shortage alerts to founders</li>
+                    <li>Created Power BI dashboards for business analytics and Dynamics 365 solutions for CRM operations</li>
+                    <li>Implemented Microsoft Fabric for enterprise data integration and transformation</li>
+                    <li>Built complex web applications solving critical business problems</li>
+                    <li>Automated reporting workflows reducing manual effort by 40%</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Projects Section -->
+        <div class="section">
+            <h3 class="section-title">PROJECTS</h3>
+            
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">Car Renting Service Platform</div>
+                </div>
+                <ul>
+                    <li>Designed full-stack application with dual user roles (Customers/Car Rental Agencies)</li>
+                    <li>Implemented separate registration/login systems for different user types</li>
+                    <li><strong>Technologies:</strong> HTML/CSS/JS/Bootstrap, PHP, MySQL</li>
+                </ul>
+            </div>
+            
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">LMS Website (Innotech Internship)</div>
+                </div>
+                <ul>
+                    <li>Led 3-member team in developing Learning Management System</li>
+                    <li>Managed task allocation, code reviews, and deadline adherence</li>
+                    <li>Optimized critical website components and resolved system errors</li>
+                    <li>Deployed solution via GitHub with comprehensive file management</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Skills Section -->
+        <div class="section">
+            <h3 class="section-title">SKILLS</h3>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h4>Web Development</h4>
+                    <div class="skill-list">
+                        <span class="skill">JavaScript</span>
+                        <span class="skill">PHP</span>
+                        <span class="skill">HTML5</span>
+                        <span class="skill">CSS3</span>
+                        <span class="skill">Bootstrap</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Microsoft Stack</h4>
+                    <div class="skill-list">
+                        <span class="skill">Power Automate</span>
+                        <span class="skill">Power BI</span>
+                        <span class="skill">Dynamics 365</span>
+                        <span class="skill">Excel (Advanced)</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Databases</h4>
+                    <div class="skill-list">
+                        <span class="skill">MySQL</span>
+                        <span class="skill">SQL</span>
+                        <span class="skill">Microsoft Fabric</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Tools</h4>
+                    <div class="skill-list">
+                        <span class="skill">GitHub</span>
+                        <span class="skill">Power Platform</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Education Section -->
+        <div class="section">
+            <h3 class="section-title">EDUCATION</h3>
+            
+            <div class="education-item">
+                <div class="item-header">
+                    <div class="item-title">Master of Computer Applications (MCA)</div>
+                    <div class="item-date">2021-2023</div>
+                </div>
+                <div class="item-subtitle">Vivekananda Institute of Professional Studies, Rohini</div>
+            </div>
+            
+            <div class="education-item">
+                <div class="item-header">
+                    <div class="item-title">Bachelor of Computer Applications (BCA)</div>
+                    <div class="item-date">2018-2021</div>
+                </div>
+                <div class="item-subtitle">Chanderprabhu Jain College, Narela</div>
+            </div>
+        </div>
+        
+        <!-- Certifications Section -->
+        <div class="section">
+            <h3 class="section-title">CERTIFICATIONS</h3>
+            <ul>
+                <li><strong>Accenture:</strong> Practical Modules in Project Planning, User Journey Redesign, Error Resolution</li>
+                <li><strong>Alison:</strong> Basics of Computers & iOS Development (Credential ID: 1529-31490054)</li>
+            </ul>
+        </div>
+        
+        <!-- Contact Section -->
+        <div class="section">
+            <h3 class="section-title">CONTACT</h3>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>9990287700 | 8368714238</span>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <span>Nishantgautam916@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>🌐</span>
+                    <span>Nishantgautam916.github.io</span>
+                </div>
+                <div class="contact-item">
+                    <span>🏠</span>
+                    <span>Delhi-110006</span>
+                </div>
+                <div class="contact-item">
+                    <span>🔗</span>
+                    <span>linkedin.com/in/nishant-gautam-a2429a1b2</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script>
-     
+        // Simple PDF download functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const printButton = document.createElement('button');
+            printButton.textContent = 'Download PDF';
+            printButton.style.cssText = `
+                display: block;
+                margin: 20px auto;
+                padding: 12px 30px;
+                background: #1a2a6c;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background 0.3s;
+            `;
+            printButton.addEventListener('mouseover', () => {
+                printButton.style.background = '#2a5298';
+            });
+            printButton.addEventListener('mouseout', () => {
+                printButton.style.background = '#1a2a6c';
+            });
+            printButton.addEventListener('click', () => {
+                window.print();
+            });
+            
+            document.body.insertBefore(printButton, document.querySelector('.resume'));
+        });
     </script>
-
 </body>
 </html>
-
-
-
-</body>
-</html>
-
