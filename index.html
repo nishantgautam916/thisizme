@@ -161,7 +161,25 @@
         .education-item {
             margin-bottom: 20px;
         }
-        
+
+        /* Print-specific styles */
+        @media print {
+            .pdf-button {
+                display: none !important;
+            }
+            
+            body {
+                padding: 0;
+                background: white;
+            }
+            
+            .resume {
+                box-shadow: none;
+                border-radius: 0;
+                max-width: 100%;
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .header {
@@ -193,6 +211,20 @@
     </style>
 </head>
 <body>
+    <!-- Download PDF Button (will disappear when printed) -->
+    <button class="pdf-button" onclick="window.print()" style="
+        display: block;
+        margin: 0 auto 20px auto;
+        padding: 12px 30px;
+        background: #1a2a6c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+    ">Download PDF</button>
+    
     <div class="resume">
         <!-- Header Section -->
         <div class="header">
@@ -346,7 +378,7 @@
                 </div>
                 <div class="contact-item">
                     <span>🌐</span>
-                    <span>Nishantgautam916.github.io</span>
+                    <span><a href="https://nishantgautam916.github.io/thisizme/" target="_blank">nishantgautam916.github.io/thisizme</a></span>
                 </div>
                 <div class="contact-item">
                     <span>🏠</span>
@@ -354,40 +386,24 @@
                 </div>
                 <div class="contact-item">
                     <span>🔗</span>
-                    <span>linkedin.com/in/nishant-gautam-a2429a1b2</span>
+                    <span><a href="https://www.linkedin.com/in/nishant-gautam-a2429a1b2" target="_blank">linkedin.com/in/nishant-gautam-a2429a1b2</a></span>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <script>
-        // Simple PDF download functionality
+        // Add hover effect to PDF button
         document.addEventListener('DOMContentLoaded', function() {
-            const printButton = document.createElement('button');
-            printButton.textContent = 'Download PDF';
-            printButton.style.cssText = `
-                display: block;
-                margin: 20px auto;
-                padding: 12px 30px;
-                background: #1a2a6c;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                font-size: 16px;
-                cursor: pointer;
-                transition: background 0.3s;
-            `;
-            printButton.addEventListener('mouseover', () => {
-                printButton.style.background = '#2a5298';
-            });
-            printButton.addEventListener('mouseout', () => {
-                printButton.style.background = '#1a2a6c';
-            });
-            printButton.addEventListener('click', () => {
-                window.print();
-            });
-            
-            document.body.insertBefore(printButton, document.querySelector('.resume'));
+            const pdfButton = document.querySelector('.pdf-button');
+            if(pdfButton) {
+                pdfButton.addEventListener('mouseover', () => {
+                    pdfButton.style.background = '#2a5298';
+                });
+                pdfButton.addEventListener('mouseout', () => {
+                    pdfButton.style.background = '#1a2a6c';
+                });
+            }
         });
     </script>
 </body>
